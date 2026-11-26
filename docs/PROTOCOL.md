@@ -2,7 +2,7 @@
 
 本文描述本模组实际实现的线上协议。Minecraft 模组始终是 **TCP 客户端**；`address:port` 对应的外部服务端是 **TCP 服务端**。参考服务端见 `tools/tcp_test_server.py`。
 
-> 仅建议内网使用。AES-256-GCM 提供机密性和完整性，不提供重放防护；`requestid` + `timestamp` 是应用层补充措施。
+> 仅建议内网使用。AES-256-GCM 提供机密性和完整性，不提供重放防护；`requestid` + `timestamp` 是应用层补充措施。如需外网使用，请自行增加 TLS 代理，并且后果自负。
 
 ## 1. 帧格式
 
