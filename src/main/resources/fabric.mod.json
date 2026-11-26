@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "network-socket",
+	"version": "${version}",
+	"name": "TCP Interface",
+	"description": "A redstone block that sends redstone changes to an external TCP server using encrypted 256-byte frames, with per-map connection configuration and replay protection.",
+	"authors": [
+		"wsuint",
+		"Flying_Snow"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/network-socket/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ws.fabricmod.networksocket.NetworkSocket"
+		],
+		"client": [
+			"ws.fabricmod.networksocket.client.NetworkSocketClient"
+		],
+		"fabric-client-gametest": [
+			"ws.fabricmod.networksocket.client.TcpInterfaceClientGameTest"
+		]
+	},
+	"mixins": [
+		"network-socket.mixins.json",
+		{
+			"config": "network-socket.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

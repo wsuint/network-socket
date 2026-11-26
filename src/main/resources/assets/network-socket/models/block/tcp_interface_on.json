@@ -1,0 +1,6 @@
+{
+  "parent": "network-socket:block/tcp_interface",
+  "textures": {
+    "bottom": "network-socket:block/tcp_interface_back_on"
+  }
+}
